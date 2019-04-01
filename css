@@ -1,0 +1,119 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+#scene {
+   
+   /* Positioning and dimensions */
+   position: absolute;
+   top: 200px;
+   left: 10px;
+   width: 400px;
+   height: 300px;
+   overflow: hidden;
+   
+   /* --- Gradient background --- */
+	 /* Solid fallback for old browsers */
+   background: #0099ff;
+   /* general syntax */
+   background: linear-gradient(top, #0099ff, #00ccff);
+}
+	
+	
+.yoshi {
+	position: absolute;
+	bottom: 0px;
+	left: -140px;
+	animation: runRightYoshi linear 6s;
+	animation-fill-mode: forwards;
+	}
+	
+.mario {
+	position: absolute;
+	bottom: -40px;
+	left: -90px;
+	animation: runLeftMario linear 4s;
+	animation-fill-mode: forwards;
+	}
+	
+
+.stand {
+   /* image is 12 x 130 px */
+   position: absolute;
+   bottom: 0;
+   left: 250px;
+}
+
+.blades {
+   /* image is 120 x 120 px */
+   position: absolute;
+   top: 116px;
+   left: 196px;
+   animation: bladeSpin 10s ease-in-out infinite;
+   
+}
+	
+.cloud {
+   position: absolute;
+   animation: cloudDrift linear infinite;
+   
+}
+	
+.lrg {
+   /* image is 130 x 67 px */
+   top: 40px;
+   left: -140px;
+	animation-duration: 40s;
+}
+	
+.med {
+   /* image is 100 x 52 px */
+   top: 80px;
+   left: -110px;
+	animation-duration: 30s;
+}
+.sml {
+   /* image is 70 x 36 px */
+   top: 10px;
+   left: -80px;
+	animation-duration: 20s;
+}
+	
+@keyframes runRightYoshi {
+	from { transform: translateX(540px);}
+	to {transform: translateX(360px);}
+}
+	
+@keyframes runLeftMario {
+	from { transform: translateX(0px);}
+	to {transform: translateX(240px);}
+}
+	
+@keyframes bladeSpin {
+   from { transform: rotate(0deg); }
+   to { transform: rotate(1440deg); }
+}
+
+@keyframes cloudDrift {
+   from { transform: translateX(0px); }
+   to { transform: translateX(540px); }
+}
+
+
+</style>
+</head>
+<body>
+<div id="scene">
+<img class="cloud sml" src="../images/cloud_med.png" width="70" height="36"/>
+<img class="cloud med" src="../images/cloud_lrg.png" width="100" height="52"/>
+<img class="cloud lrg" src="../images/cloud_sml.png" width="130" height="67"/>
+
+<img class="blades" src="../images/blades.png" width="120" height="120"/>
+<img class="stand" src="../images/stand.png" width="12" height="130"/>
+
+	<img class="yoshi" src="../images/yoshigifreversed.gif" width="60" height="70"/>
+<img class="mario" src="../images/super-mario.gif" width="120" height="150"/>
+</div>
+</body>
+</html>
